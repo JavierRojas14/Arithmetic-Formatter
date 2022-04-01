@@ -1,5 +1,12 @@
+from unittest import result
+
 def arithmetic_formatter(lista):
     if len(lista) <= 5:
+        primeras_lineas = []
+        segundas_lineas = []
+        terceras_lineas = []
+        cuartas_lineas = []
+
         for i in lista:
             operacion = i.split(' ')
             primer_operando = operacion[0]
@@ -51,16 +58,28 @@ def arithmetic_formatter(lista):
                             cuarta_linea += ' '
                         
                         cuarta_linea += str(suma_operadores)
+
+                        primeras_lineas.append(primera_linea)
+                        segundas_lineas.append(segunda_linea)
+                        terceras_lineas.append(tercera_linea)
+                        cuartas_lineas.append(cuarta_linea)
                         
                         todo = f'{primera_linea}\n{segunda_linea}\n{tercera_linea}\n{cuarta_linea}'
-
-                        print(todo)
   
                     else:
                         print('Error: Numbers cannot be more than four digits.')
                 else:
                     print('Error: Numbers must only contain digits.')
             else:
-                print("Error: Operator must be '+' or '-'") 
+                print("Error: Operator must be '+' or '-'")
+
+        primera_linea_global = '    '.join(primeras_lineas)
+        segunda_linea_global = '    '.join(segundas_lineas)
+        tercera_linea_global = '    '.join(terceras_lineas)
+        cuarta_linea_global = '    '.join(cuartas_lineas)
+
+        formateo = f'{primera_linea_global}\n{segunda_linea_global}\n{tercera_linea_global}\n{cuarta_linea_global}'
+
+        print(formateo)
     else:
         print('Error: Too many problems.')
