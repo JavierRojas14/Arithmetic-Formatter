@@ -52,7 +52,7 @@ def arithmetic_formatter(lista):
                         
                         cuarta_linea += str(suma_operadores)
                         
-                        todo = f'{primera_linea} \n {segunda_linea} \n {tercera_linea} \n {cuarta_linea}'
+                        todo = f'{primera_linea}\n{segunda_linea}\n{tercera_linea}\n{cuarta_linea}'
 
                         print(todo)
   
