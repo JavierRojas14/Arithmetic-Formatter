@@ -17,7 +17,7 @@ def arithmetic_formatter(lista):
             cantidad_digitos_segundo_operando = len(segundo_operando)
 
             if operador == '+' or operador == '-':
-                if primer_operando.isnumeric() or segundo_operando.isnumeric():
+                if primer_operando.isnumeric() and segundo_operando.isnumeric():
                     if (cantidad_digitos_primer_operando <= 4) and (cantidad_digitos_segundo_operando <= 4):
                         # En este punto, se han cumplido todos los requerimientos para que se convierta la shit.
 
@@ -72,10 +72,13 @@ def arithmetic_formatter(lista):
   
                     else:
                         print('Error: Numbers cannot be more than four digits.')
+                        return
                 else:
                     print('Error: Numbers must only contain digits.')
+                    return
             else:
                 print("Error: Operator must be '+' or '-'")
+                return
 
         primera_linea_global = '    '.join(primeras_lineas)
         segunda_linea_global = '    '.join(segundas_lineas)
@@ -87,3 +90,4 @@ def arithmetic_formatter(lista):
         print(formateo)
     else:
         print('Error: Too many problems.')
+        return
