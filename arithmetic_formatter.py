@@ -1,6 +1,6 @@
 from unittest import result
 
-def arithmetic_formatter(lista):
+def arithmetic_formatter(lista, retornador = False):
     if len(lista) <= 5:
         primeras_lineas = []
         segundas_lineas = []
@@ -86,8 +86,10 @@ def arithmetic_formatter(lista):
         cuarta_linea_global = '    '.join(cuartas_lineas)
 
         formateo = f'{primera_linea_global}\n{segunda_linea_global}\n{tercera_linea_global}\n{cuarta_linea_global}'
+        
+        if retornador:
+            print(formateo)
 
-        print(formateo)
     else:
         print('Error: Too many problems.')
         return
