@@ -49,15 +49,19 @@ def arithmetic_formatter(lista):
                         for i in range(largo_operador_mas_largo):
                             tercera_linea += '-'
                         
-                        suma_operadores = int(primer_operando) + int(segundo_operando)
-                        largo_suma = len(str(suma_operadores))
+                        if operador == '+':
+                            operacion = int(primer_operando) + int(segundo_operando)
+                        elif operador == '-':
+                            operacion = int(primer_operando) - int(segundo_operando)
+
+                        largo_suma = len(str(operacion))
                         espacios_cuarta_linea = largo_operador_mas_largo - largo_suma
 
                         cuarta_linea = ''
                         for i in range(espacios_cuarta_linea):
                             cuarta_linea += ' '
                         
-                        cuarta_linea += str(suma_operadores)
+                        cuarta_linea += str(operacion)
 
                         primeras_lineas.append(primera_linea)
                         segundas_lineas.append(segunda_linea)
