@@ -1,6 +1,4 @@
-from unittest import result
-
-def arithmetic_formatter(lista, retornador = False):
+def arithmetic_arranger(lista, resultados = False):
     if len(lista) <= 5:
         primeras_lineas = []
         segundas_lineas = []
@@ -45,6 +43,7 @@ def arithmetic_formatter(lista, retornador = False):
                         
                         segunda_linea += segundo_operando
 
+
                         tercera_linea = ''
                         for i in range(largo_operador_mas_largo):
                             tercera_linea += '-'
@@ -67,29 +66,28 @@ def arithmetic_formatter(lista, retornador = False):
                         segundas_lineas.append(segunda_linea)
                         terceras_lineas.append(tercera_linea)
                         cuartas_lineas.append(cuarta_linea)
-                        
-                        todo = f'{primera_linea}\n{segunda_linea}\n{tercera_linea}\n{cuarta_linea}'
   
                     else:
-                        print('Error: Numbers cannot be more than four digits.')
-                        return
+                        return 'Error: Numbers cannot be more than four digits.'
+
                 else:
-                    print('Error: Numbers must only contain digits.')
-                    return
+                    return 'Error: Numbers must only contain digits.'
+
             else:
-                print("Error: Operator must be '+' or '-'")
-                return
+                return "Error: Operator must be '+' or '-'."
+
 
         primera_linea_global = '    '.join(primeras_lineas)
         segunda_linea_global = '    '.join(segundas_lineas)
         tercera_linea_global = '    '.join(terceras_lineas)
         cuarta_linea_global = '    '.join(cuartas_lineas)
 
-        formateo = f'{primera_linea_global}\n{segunda_linea_global}\n{tercera_linea_global}\n{cuarta_linea_global}'
+        if resultados:
+            formateo = f'{primera_linea_global}\n{segunda_linea_global}\n{tercera_linea_global}\n{cuarta_linea_global}'
+        else:
+            formateo = f'{primera_linea_global}\n{segunda_linea_global}\n{tercera_linea_global}'
         
-        if retornador:
-            print(formateo)
+        return formateo
 
     else:
-        print('Error: Too many problems.')
-        return
+        return 'Error: Too many problems.'
